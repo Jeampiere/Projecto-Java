@@ -16,12 +16,15 @@ public class ProyectoPoo {
        int opcion; //Guardaremos la opcion del usuario
         
        while(!salir){
-            
+           System.out.println("*************************");
+           System.out.println("|BIENVENIDO A TINDER-POL|");
+           System.out.println("*************************");
+           System.out.println("");
            System.out.println("1. Crear cuenta usuario");
            System.out.println("2. Iniciar sesión");
            System.out.println("3. Salir");
             
-           System.out.print("Escribe una de las opciones: ");
+           System.out.print("Escoge una de las opciones: ");
            opcion = sn.nextInt();
             
            switch(opcion){
