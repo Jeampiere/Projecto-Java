@@ -7,13 +7,11 @@ public class ProyectoPoo {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner sn = new Scanner(System.in);
-       //email, nombre, fecha de nacimiento y contraseña. 
-        ArrayList<String> usuarios = new ArrayList<>(); 
+       //email, nombre, fecha de nacimiento y contraseña.
+       //Creo un arreglo para guardar listas
+       ArrayList<String []> usuarios = new ArrayList<String []>();
 //////////////////////////////////////////////////////////////////////////
-        String [] usuarioStandar = new String[4];
-        String [] usuarioPremiun = new String[6];
-       
-       
+////MENU PRINCIPAL
        boolean salir = false;
        int opcion; //Guardaremos la opcion del usuario
         
@@ -34,17 +32,99 @@ public class ProyectoPoo {
                    //while (continuar_3==0){
                    System.out.println("Ingrese el tipo de usuario premium o standard: ");
                    String usuario = sn.nextLine();
+                   /*if (usuario.equals("standard")|| usuario.equals("premium")){
+                        continuar_3=1;
+                    }
+                    else
+                        continuar_3=0;
+                   }*/
+                   ////////////////////////////////////////////////////////////////
+                   int continuar_1=0;
+                   String email_1="";
+                   while(continuar_1==0){
+                   System.out.println("Ingrese email: ");
+                   String email = sn.nextLine().toLowerCase();
+                   //////EN ESTA PARTE COMPUEBO EL @//////
+                   int indice=email.indexOf("@");
+                   //System.out.println(email.charAt(indice));
+                   char Caracter=(email.charAt(indice));
+                   String arroba=String.valueOf(Caracter);
+                   ///////////////////////////////////////
+                   if(arroba.equals("@")&& (email.endsWith(".com")|| email.endsWith(".ec"))){
+                    continuar_1=1;
+                    email_1=email;
+                   }
+                   else
+                    continuar_1=0;
+                   }
                    
+                   ///////////////////////////////////////////////////////////////
+                   System.out.println("Ingrse su nombre: ");
+                   String nombre = sn.nextLine();
+                   ///////////////////////////////////////////////////////////////
+                   int continuar_2=0;
+                   String fecha_nacimiento_1="";
+                   while(continuar_2==0){
+                   System.out.println("Ingrese su fecha de nacimiento(separado por DD/MM/AA): ");
+                   String fechaNacimiento = sn.nextLine();
+                   String[] parts_fecha_nacimiento = fechaNacimiento.split("/");
+                   //System.out.println(parts_fecha_nacimiento[2]);
+                   //valido el anio////
+                   String part_anio = parts_fecha_nacimiento[2];
+                   int anio = Integer.parseInt(part_anio);
+                   //valido el dia////
+                   String part_dia = parts_fecha_nacimiento[0];
+                   int dia = Integer.parseInt(part_dia);
+                   //valido el mes///
+                   String part_mes = parts_fecha_nacimiento[1];
+                   int mes = Integer.parseInt(part_mes);
+                   //System.out.println(anio);
+                   if ((anio>1900 && anio<2001)&&(dia>0 && dia<=31)&& (mes>0 && mes<13)){
+                        continuar_2=1;
+                        fecha_nacimiento_1=fechaNacimiento;
+                    }
+                    else 
+                        continuar_2=0;
+                    }
+                    /////////////////////////////////////////////////////////////
+                   System.out.println("Ingrese la contraseña: ");
+                   String contraseña = sn.nextLine();
+                   //String [] usuarioPremiun = new String[6];
+                   //String [] usuarioStandar = new String[4];
+                   if (usuario.equals("premium")){
+                       String [] usuarioPremiun = new String[6];
+                       System.out.println("Ingrese el numero de su tarjeta de credito: ");
+                       String tarjetaCredito = sn.nextLine();
+                       System.out.println("Ingrese la fecha de caducidad: ");
+                       String fDeCaducidad = sn.nextLine();
+                       //email, nombre, fecha de nacimiento y contraseña.
+                       //AGREGAMOS CADA CAMPO EL VECTOR Y LUEGO A EL ARREGLO (LISTA DENTRO DE ARREGLO)
+                       usuarioPremiun[0]=email_1;
+                       usuarioPremiun[1]=nombre;
+                       usuarioPremiun[2]=fecha_nacimiento_1;
+                       usuarioPremiun[3]=contraseña;
+                       usuarioPremiun[4]=tarjetaCredito;
+                       usuarioPremiun[5]=fDeCaducidad;
+                       usuarios.add(usuarioPremiun);
                    
-                   
+                   }
+                   //AGREGAMOS CADA CAMPO EL VECTOR Y LUEGO A EL ARREGLO (LISTA DENTRO DE ARREGLO)
+                   else if(usuario.equals("standard")){
+                       String [] usuarioStandar = new String[4];
+                       usuarioStandar[0]=email_1;
+                       usuarioStandar[1]=nombre;
+                       usuarioStandar[2]=fecha_nacimiento_1;
+                       usuarioStandar[3]=contraseña;
+                       usuarios.add(usuarioStandar);
+                       
+                   }
+
+                   break;
+
                 case 2:
+                //CREAMOS UN SUBMENU
                    int opcionC2;
                    boolean salida = false;
-                   //Validar que el usuario exista 
-                
-                   
-                   
-                   
                    while(!salida){
                        System.out.println("Escribe una de las opciones");
                        System.out.println("1. Completar perfil");
@@ -55,25 +135,6 @@ public class ProyectoPoo {
                        
                        switch(opcionC2){
                            case 1:
-                               /*En la opción de Completar Perfil, el usuario creara su perfil con preguntas
-                               de información básica: género, profesión. También debe incluir preguntas que 
-                               ayuden a averiguar la compatibilidad entre dos personas, por ejemplo edad de 
-                               interés, pasatiempos, etc. Deben incluir al menos 6 preguntas que permitan 
-                               averiguar la compatibilidad. Para facilitar su trabajo se sugiere que se usen 
-                               preguntas de múltiple opción.(Se incluyen archivos de profesiones e intereses,
-                               por si desea utilizarlos)*/
-                               
-                               String edad, interes, genero, profesion, estatura, colorFav, hobbie, lugarFav; 
-                               System.out.println("Genero");
-                               System.out.println("1. Masculino");
-                               System.out.println("2.Femenino");
-                               genero = sn.nextLine();
-                               /////////////////////////////////////////////
-                               System.out.println("Profesion");
-                               System.out.println("1. Masculino");
-                               System.out.println("2.Femenino");
-                               
-
                                break;
                            case 2:
                            case 3:
@@ -95,6 +156,7 @@ public class ProyectoPoo {
            }
             
        }
+        
         
     }
 }
