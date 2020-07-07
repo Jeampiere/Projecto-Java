@@ -16,4 +16,16 @@ public class Usuario {
     private String contrasena;
     private Perfil perfil;
     
+    public void completarPerfil(){
+        return;
+    }
+    
+    public ArrayList<Candidato> buscarPareja(){
+        return ;
+    }
+    
+    public String getEmail(){
+        return this.email;
+    }
+    
 }
