@@ -12,4 +12,10 @@ import java.util.*;
 public class UserPremium extends Usuario {
     private int numTjtaCredito;
     private Date fechaCaducidadTjta;
+    
+    public void darSuperLike(){
+        
+    }
+    
+  
 }
