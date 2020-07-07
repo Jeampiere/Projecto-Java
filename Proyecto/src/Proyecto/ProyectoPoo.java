@@ -16,12 +16,15 @@ public class ProyectoPoo {
        int opcion; //Guardaremos la opcion del usuario
         
        while(!salir){
-            
+           System.out.println("*************************");
+           System.out.println("|BIENVENIDO A TINDER-POL|");
+           System.out.println("*************************");
+           System.out.println("");
            System.out.println("1. Crear cuenta usuario");
            System.out.println("2. Iniciar sesión");
            System.out.println("3. Salir");
             
-           System.out.print("Escribe una de las opciones: ");
+           System.out.print("Escoge una de las opciones: ");
            opcion = sn.nextInt();
             
            switch(opcion){
@@ -126,15 +129,79 @@ public class ProyectoPoo {
                    int opcionC2;
                    boolean salida = false;
                    while(!salida){
-                       System.out.println("Escribe una de las opciones");
-                       System.out.println("1. Completar perfil");
+                       System.out.println("");
+                       System.out.println("**Bienvenido**");
+                       System.out.println("\n1. Completar perfil");
                        System.out.println("2. Buscar pareja");
                        System.out.println("3. Buzón");
                        System.out.println("4. Salir");
+                       System.out.print("Escoge una de las opciones: ");
                        opcionC2 = sn.nextInt();
-                       
+                       System.out.println("");
                        switch(opcionC2){
                            case 1:
+                               int edad, genero, estatura, intereses, profesion, color;
+                               //Ingreo del numero de opcion que indica la edad
+                               System.out.println("Intervalos de edades");
+                               System.out.println("\n1. 18-22");
+                               System.out.println("2. 22-26");
+                               System.out.println("3. 27-31");
+                               System.out.print("Ingrese el intervalo en el que se encuentra su edad: ");
+                               edad = sn.nextInt();
+                               
+                               ////Ingreo del numero de opcion que indica el genero
+                               System.out.println("*********************************************************************************");
+                               System.out.println("Genero");
+                               System.out.println("\n1. Masculino");
+                               System.out.println("2. Femenino");
+                               System.out.print("Ingrse la opcion que corresponde a su genero: ");
+                               genero = sn.nextInt();
+                               
+                               
+                               ////Ingreo del numero de opcion que indica el 
+                               System.out.println("*********************************************************************************");
+                               System.out.println("Intervalos de estatura.");
+                               System.out.println("\n1. 1.50-1.70");
+                               System.out.println("2. 1.71-1.90");
+                               System.out.println("3. 1.91-2.10");
+                               System.out.print("Ingrese el intervalo en el que se encuentra su estatura: ");
+                               estatura = sn.nextInt();
+                               
+                               ////Ingreo del numero de opcion de interes que mas le llame la atencion
+                               System.out.println("*********************************************************************************");
+                               System.out.println("Intereses");
+                               System.out.println("\n1. Muúica");
+                               System.out.println("2. Deportes");
+                               System.out.println("3. Animales");
+                               System.out.println("4. Moda");
+                               System.out.println("5. Viajar");
+                               System.out.print("Ingree del numero de opcion de interes que mas le llame la atencion: ");
+                               intereses = sn.nextInt();
+                               
+                               ////Ingreo del numero de opcion de profesion que mas le llame la atencion
+                               System.out.println("*********************************************************************************");
+                               System.out.println("Profesión");
+                               System.out.println("\n1. Ingeniero");
+                               System.out.println("2. Abogado");
+                               System.out.println("3. Economista");
+                               System.out.println("4. Arquitecto");
+                               System.out.println("5. Porfesor");
+                               System.out.print("Ingree del numero de opcion de profesión que mas le llame la atencion: ");
+                               profesion = sn.nextInt();
+                               
+                               ////Ingreo del numero de opcion de Color que mas le llame la atencion
+                               System.out.println("*********************************************************************************");
+                               System.out.println("Color que mas te llama la atención");
+                               System.out.println("\n1. Negro");
+                               System.out.println("2. Rojo");
+                               System.out.println("3. Azul");
+                               System.out.println("4. Verde");
+                               System.out.println("5. Amarillo");
+                               System.out.print("Ingrese el intervalo en el que se encuentra su estatura: ");
+                               color = sn.nextInt();
+                               System.out.println("*********************************************************************************");
+                               
+                               System.out.println("LISTO COMPLETASTE TU PERFIL");
                                break;
                            case 2:
                            case 3:
